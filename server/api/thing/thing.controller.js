@@ -10,11 +10,17 @@
 'use strict';
 
 var _ = require('lodash');
+
 var Thing = require('./thing.model');
 
 // Get list of things
 exports.index = function(req, res) {
-  Thing.find(function (err, things) {
+
+  console.log('Thing Index', req.query.page, req.query.limit);
+
+  Thing.paginate({}, req.query.page, req.query.limit, function (err, pageCount, things, itemCount) {
+    console.log('Thing Index Answer:', err, pageCount, itemCount);
+
     if(err) { return handleError(res, err); }
     return res.json(200, things);
   });

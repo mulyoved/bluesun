@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/bluesun-dev'
   },
 
-  seedDB: true
+  seedDB: false
 };

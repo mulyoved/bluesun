@@ -2,10 +2,16 @@
 
 angular.module('bluesunApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
-    $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
-    }];
+    $scope.menu = [
+      {
+        'title': 'Home',
+        'link': '/'
+      },
+      {
+        'title': 'Test',
+        'link': '/test/kitchensink'
+      }
+    ];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;

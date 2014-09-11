@@ -9,4 +9,8 @@ var ThingSchema = new Schema({
   active: Boolean
 });
 
+
+var mongoosePaginate = require('mongoose-paginate');
+ThingSchema.plugin(mongoosePaginate);
+
 module.exports = mongoose.model('Thing', ThingSchema);
